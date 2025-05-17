@@ -1,12 +1,15 @@
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        n = 0
-        for i in range(len(nums) - 1):
-            if nums[i] == val:
-                n += 1
-                for j in range(i, len(nums) - 1):
-                    nums[j], nums[j+1] = nums[j+1], nums[j]
-            
-        return n
+        k = 0
+        m, n = 0, len(nums) - 1
+        while n >= m:
+            if nums[m] == val:
+                k += 1
+                nums[n], nums[m] = nums[m], nums[n]
+                n -= 1
+            else:
+                m += 1
+
+        return (len(nums) - k)
 
         
