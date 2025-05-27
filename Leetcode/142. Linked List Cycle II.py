@@ -21,6 +21,7 @@ class Solution:
                     new_slow = new_slow.next
                     slow = slow.next
         
+                # The point where slow and new_slow meet is the start of the cycle
                 return slow
 
         return None
